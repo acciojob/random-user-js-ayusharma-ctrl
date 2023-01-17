@@ -23,7 +23,8 @@ function fetchingData() {
         .catch(error => console.error("Unable to fetch data " + error))
 }
 
-fetchingData()
+// fetchingData()
+document.addEventListener('DOMContentLoaded',fetchingData)
 
 function insert(dataOfuser) {
 
