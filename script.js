@@ -11,17 +11,18 @@ var apiLink = "https://randomuser.me/api/"
 
 var userDATA;
 
-function fetchingData() {
-    //sending fetch request to server && this variable is acting as a promise
-    var apiData = fetch(apiLink)
-    //convert and collect data
-    apiData.then(data => data.json())
-        .then(data => {
-            userDATA = data
-            insert(userDATA)
-        })
-        .catch(error => console.error("Unable to fetch data " + error))
+async function fetchingData() {
+    try {
+        var apiData = await fetch(apiLink)
+        var apiResponse = await apiData.json()
+        userDATA = apiResponse
+        insert(userDATA)
+    }
+    catch (error) {
+        console.log("Unable to fetch data" + error);
+    }
 }
+
 
 // fetchingData()
 document.addEventListener('DOMContentLoaded',fetchingData)
