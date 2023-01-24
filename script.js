@@ -37,10 +37,7 @@ function insert(dataOfuser) {
     const readFirstName = source[0].name.first
     const readLastName = source[0].name.last
     fullname.textContent = readFirstName + " " + readLastName
-}
-
-
-
+	
 function showAge(){
     const source = userDATA.results;
     const readAge = source[0].dob.age
@@ -68,6 +65,10 @@ function showPhone(){
 }
 
 phoneBtn.addEventListener('click', showPhone)
+}
+
+
+
 
 
 
